@@ -22,20 +22,23 @@ namespace CSV_accesso_diretto_Form
     {
         Funzioni f;
         public classe[] p;
-        public int dim;
+    
         public string nomefile;
         public Form1()
         {
             InitializeComponent();
             f = new Funzioni();
-            p = new classe[100];
-            dim = 0;
-            nomefile = @"";
+            nomefile = @"Sperandio1-cor.csv";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+        //BOTTONE FUNZIONE 1
+        private void button1_Click(object sender, EventArgs e)
+        {
+            f.Aggiunta();
         }
     }
 }
