@@ -24,7 +24,7 @@ namespace CSV_accesso_diretto_Form
         public classe[] p;
         public string nomefile;
         public int lunghezza = 0;
-
+        public int lunghezza1 = 0;
         public Form1()
         {
             InitializeComponent();
@@ -46,7 +46,13 @@ namespace CSV_accesso_diretto_Form
         private void button2_Click(object sender, EventArgs e)
         {
             int ncampi = f.Contacampi();
-            MessageBox.Show("Il nunero dei campi è." + ncampi);
+            MessageBox.Show("Il nunero dei campi è:" + ncampi);
+        }
+        //BOTTONE FUNZIONE 3
+        private void button3_Click(object sender, EventArgs e)
+        {
+            f.LunghezzaMaxRecord(lunghezza1);
+            MessageBox.Show("La lunghezza massima è" + lunghezza1);
         }
     }
 }
