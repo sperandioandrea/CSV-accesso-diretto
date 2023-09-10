@@ -10,6 +10,7 @@ namespace CSV_accesso_diretto_Form.Properties
     internal class Funzioni
     {
         public string nomefile = @"Sperandio1-cor.csv";
+        //FUNZIONE 1
         public void Aggiunta()
         {
             Random num = new Random();
@@ -48,6 +49,24 @@ namespace CSV_accesso_diretto_Form.Properties
                 }
             }
         }
+
+        //FUNZIONE 2
+        public int Contacampi()
+        {
+
+            using (StreamReader sw = new StreamReader(nomefile))
+            {
+                string ncampi = sw.ReadLine();
+
+                string[] campi = ncampi.Split(';');
+
+                int c = campi.Length;
+
+                return c;
+            }
+
+        }
+
 
     }
 }

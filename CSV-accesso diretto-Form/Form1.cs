@@ -22,8 +22,9 @@ namespace CSV_accesso_diretto_Form
     {
         Funzioni f;
         public classe[] p;
-    
         public string nomefile;
+        public int lunghezza = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +40,13 @@ namespace CSV_accesso_diretto_Form
         private void button1_Click(object sender, EventArgs e)
         {
             f.Aggiunta();
+        }
+
+        //BOTTONE FUNZIONE 2
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int ncampi = f.Contacampi();
+            MessageBox.Show("Il nunero dei campi è." + ncampi);
         }
     }
 }
