@@ -37,7 +37,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(93, 89);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 33);
+            this.button1.Size = new System.Drawing.Size(169, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "AGGIUNTA";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,7 +47,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(93, 142);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 33);
+            this.button2.Size = new System.Drawing.Size(169, 33);
             this.button2.TabIndex = 1;
             this.button2.Text = "CONTA CAMPI";
             this.button2.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@
             // 
             this.button3.Location = new System.Drawing.Point(93, 198);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 33);
+            this.button3.Size = new System.Drawing.Size(169, 33);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "LUNG MAX RECORD";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -67,6 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(1114, 550);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

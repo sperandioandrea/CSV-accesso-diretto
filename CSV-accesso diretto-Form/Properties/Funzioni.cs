@@ -57,11 +57,8 @@ namespace CSV_accesso_diretto_Form.Properties
             using (StreamReader sw = new StreamReader(nomefile))
             {
                 string ncampi = sw.ReadLine();
-
                 string[] campi = ncampi.Split(';');
-
                 int c = campi.Length;
-
                 return c;
             }
 
@@ -72,27 +69,19 @@ namespace CSV_accesso_diretto_Form.Properties
         {
 
             int[] cont = new int[1000];
-
             string[] cont2 = new string[1000];
-
             int dim = 0;
-
             using (StreamReader sw = new StreamReader(nomefile))
             {
                 string a;
-
                 a = sw.ReadLine();
 
                 while (a != null)
                 {
                     int b = a.Length;
-
                     cont[dim] = lunghezza1 - b;
-
                     cont2[dim] = a;
-
                     dim++;
-
                     a = sw.ReadLine();
                 }
 
@@ -119,6 +108,12 @@ namespace CSV_accesso_diretto_Form.Properties
             }
 
         }
+
+        //FUNZIONE 4
+        public void NumeroSpazi()
+        {
+        }
+
 
 
 

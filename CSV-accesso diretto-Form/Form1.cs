@@ -52,7 +52,7 @@ namespace CSV_accesso_diretto_Form
         private void button3_Click(object sender, EventArgs e)
         {
             f.LunghezzaMaxRecord(lunghezza1);
-            MessageBox.Show("La lunghezza massima è" + lunghezza1);
+            MessageBox.Show("La lunghezza massima del record è:" + lunghezza1);
         }
     }
 }
