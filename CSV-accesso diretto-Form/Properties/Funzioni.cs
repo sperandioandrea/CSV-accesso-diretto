@@ -234,7 +234,7 @@ namespace CSV_accesso_diretto_Form.Properties
 
             return b;
         }
-
+        /*/
         //FUNZIONE 8
         public bool Modifica()
         {
@@ -266,10 +266,10 @@ namespace CSV_accesso_diretto_Form.Properties
                         break;
                     }
                     else
-                        if (campi[2].ToLower() == textBox6.Text.ToLower())
+                        if (campi[2].ToLower() == textBox13.Text.ToLower())
                     {
                         trova = true;
-                        campi[2] = textBox6.Text;
+                        campi[2] = textBox13.Text;
                         linee[i] = String.Join(";", campi);
                         sw.WriteLine(linee[i]);
                         break;
@@ -286,6 +286,7 @@ namespace CSV_accesso_diretto_Form.Properties
             }
 
         }
+        /*/
 
         //FUNZIONE 9
         public void CancellazioneLogica(string a1)
