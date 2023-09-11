@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CSV_accesso_diretto_Form.Properties
 {
@@ -130,14 +131,10 @@ namespace CSV_accesso_diretto_Form.Properties
                 while (b != null)
                 {
                     a[dim] = true;
-
                     p[dim] = b;
-
                     b = sw.ReadLine();
-
                     dim++;
                 }
-
                 if (b == null)
                 {
                     a[dim] = false;
@@ -148,23 +145,94 @@ namespace CSV_accesso_diretto_Form.Properties
             using (StreamWriter sw = new StreamWriter(nomefile))
             {
                 dim = 0;
-
                 while (dim < 1000)
                 {
-
                     if (a[dim] == false)
                     {
                         sw.WriteLine(a1 + ";" + a2 + ";" + a3 + ";" + a4 + ";" + a5 + ";" + a6 + ";" + a7 + ";" + a8 + ";" + a9);
                         break;
                     }
-
                     sw.WriteLine(p[dim]);
-
                     dim++;
                 }
             }
         }
 
+        //FUNZIONE 7
+        public string Ricerca(string a1)
+        {
+            string a = a1;
+
+            int cont = 0;
+
+            int dim = 0;
+
+            string[] ele = new string[1000];
+
+            using (StreamReader sw = new StreamReader(nomefile))
+            {
+                string d = sw.ReadLine();
+
+                string[] campi = d.Split(';');
+
+                dim = 0;
+
+                for (int i = 0; i < campi.Length; i++)
+                {
+                    if ("miovalore" == a)
+                    {
+                        cont = 11;
+                    }
+                    else
+                    {
+                        if (campi[dim] == a)
+                        {
+                            cont = dim;
+                        }
+                    }
+
+                    dim++;
+                }
+
+                dim = 0;
+
+                while (d != null)
+                {
+                    string[] campi2 = d.Split(';');
+
+                    ele[dim] = campi2[cont];
+
+                    d = sw.ReadLine();
+                    dim++;
+                }
+            }
+
+            string b = "";
+
+            int t = 0;
+
+            for (int i = 0; i < ele.Length; i++)
+            {
+                if (ele[i + 1] != null)
+                {
+                    if (ele[t].Length >= ele[i + 1].Length)
+                    {
+                        b = ele[t];
+                    }
+                    else
+                    {
+                        b = ele[i + 1];
+                        t = i + 1;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return b;
+        }
 
     }
 }
