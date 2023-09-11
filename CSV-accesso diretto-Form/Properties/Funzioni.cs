@@ -114,7 +114,56 @@ namespace CSV_accesso_diretto_Form.Properties
         {
         }
 
+        //FUNZIONE 5
+        public void AggiuntaCoda(string a1, string a2, string a3, string a4, string a5, string a6, string a7, string a8, string a9)
+        {
+            bool[] a = new bool[1000];
 
+            string[] p = new string[1000];
+
+            int dim = 0;
+
+            using (StreamReader sw = new StreamReader(nomefile))
+            {
+                string b = sw.ReadLine();
+
+                while (b != null)
+                {
+                    a[dim] = true;
+
+                    p[dim] = b;
+
+                    b = sw.ReadLine();
+
+                    dim++;
+                }
+
+                if (b == null)
+                {
+                    a[dim] = false;
+                }
+
+            }
+
+            using (StreamWriter sw = new StreamWriter(nomefile))
+            {
+                dim = 0;
+
+                while (dim < 1000)
+                {
+
+                    if (a[dim] == false)
+                    {
+                        sw.WriteLine(a1 + ";" + a2 + ";" + a3 + ";" + a4 + ";" + a5 + ";" + a6 + ";" + a7 + ";" + a8 + ";" + a9);
+                        break;
+                    }
+
+                    sw.WriteLine(p[dim]);
+
+                    dim++;
+                }
+            }
+        }
 
 
     }

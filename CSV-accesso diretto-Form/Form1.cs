@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CSV_accesso_diretto_Form
 {
@@ -53,6 +54,25 @@ namespace CSV_accesso_diretto_Form
         {
             f.LunghezzaMaxRecord(lunghezza1);
             MessageBox.Show("La lunghezza massima del record è:" + lunghezza1);
+        }
+        //BOTTONE FUNIONE 4
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+        //BOTTONE FUNIONE 5
+        private void button5_Click(object sender, EventArgs e)
+        {
+            f.AggiuntaCoda(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text);
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            textBox9.Text = "";
         }
     }
 }
