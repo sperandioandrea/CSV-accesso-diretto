@@ -44,6 +44,8 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -176,12 +178,31 @@
             this.textBox10.Size = new System.Drawing.Size(100, 22);
             this.textBox10.TabIndex = 15;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(636, 89);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(183, 33);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "CACELLAZIONE LOGICA";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(682, 128);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(100, 22);
+            this.textBox11.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(1217, 550);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox9);
@@ -224,6 +245,8 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox11;
     }
 }
 

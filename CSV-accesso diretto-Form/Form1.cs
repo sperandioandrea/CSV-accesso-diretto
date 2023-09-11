@@ -75,7 +75,7 @@ namespace CSV_accesso_diretto_Form
             textBox8.Text = "";
             textBox9.Text = "";
         }
-        //BOTTNE FUNZIONE 7
+        //BOTTONE FUNZIONE 7
         private void button6_Click(object sender, EventArgs e)
         {
             string b = f.Ricerca(textBox5.Text);
@@ -85,7 +85,14 @@ namespace CSV_accesso_diretto_Form
             MessageBox.Show(b);
 
             textBox10.Text = "";
-
         }
+        //BOTTONE FUNZIONE 9
+        private void button7_Click(object sender, EventArgs e)
+        {
+            f.CancellazioneLogica(textBox11.Text);
+            textBox11.Text = "";
+        }
+        
+
     }
 }

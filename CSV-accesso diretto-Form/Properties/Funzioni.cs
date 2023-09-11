@@ -236,5 +236,57 @@ namespace CSV_accesso_diretto_Form.Properties
 
         //FUNZIONE 8
 
+        //FUNZIONE 9
+        public void CancellazioneLogica(string a1)
+        {
+            bool[] a = new bool[1000];
+
+            string[] a2 = new string[1000];
+
+            string c = a1;
+
+            int dim = 0;
+
+            using (StreamReader sw = new StreamReader(nomefile))
+            {
+                string b = sw.ReadLine();
+
+                while (b != null)
+                {
+                    a2[dim] = b;
+
+                    string[] campi = b.Split(';');
+
+                    if (campi[0] == c)
+                    {
+                        a[dim] = false;
+                    }
+                    else
+                    {
+                        a[dim] = true;
+                    }
+                    dim++;
+
+                    b = sw.ReadLine();
+                }
+            }
+
+            using (StreamWriter sw = new StreamWriter(nomefile))
+            {
+                dim = 0;
+
+                while (a2[dim] != null)
+                {
+
+                    if (a[dim] == true)
+                    {
+                        sw.WriteLine(a2[dim]);
+                    }
+                    dim++;
+                }
+            }
+
+
+        }
     }
 }
