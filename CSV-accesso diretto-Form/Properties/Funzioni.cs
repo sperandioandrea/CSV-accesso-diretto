@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CSV_accesso_diretto_Form.Properties
 {
@@ -235,6 +236,56 @@ namespace CSV_accesso_diretto_Form.Properties
         }
 
         //FUNZIONE 8
+        public bool Modifica()
+        {
+            bool trova = false;
+            string[] linee = File.ReadAllLines();
+            using (StreamWriter sw = new StreamWriter(nomefile))
+            {
+
+                int i = 1;
+                sw.WriteLine(linee[0]);
+                for (; i < linee.Length; i++)
+                {
+                    string[] campi = linee[i].Split(';');
+                    if (campi[0].ToLower() == textBox13.Text.ToLower())
+                    {
+                        trova = true;
+                        campi[0] = textBox12.Text;
+                        linee[i] = String.Join(";", campi);
+                        sw.WriteLine(linee[i]);
+                        break;
+                    }
+                    else
+                        if (campi[1].ToLower() == textBox12.Text.ToLower())
+                    {
+                        trova = true;
+                        campi[1] = textBox12.Text;
+                        linee[i] = String.Join(";", campi);
+                        sw.WriteLine(linee[i]);
+                        break;
+                    }
+                    else
+                        if (campi[2].ToLower() == textBox6.Text.ToLower())
+                    {
+                        trova = true;
+                        campi[2] = textBox6.Text;
+                        linee[i] = String.Join(";", campi);
+                        sw.WriteLine(linee[i]);
+                        break;
+                    }
+                    i++;
+                    for (; i < linee.Length; i++)
+                    {
+                        sw.WriteLine(linee[i]);
+                    }
+
+                }
+                return trova;
+
+            }
+
+        }
 
         //FUNZIONE 9
         public void CancellazioneLogica(string a1)

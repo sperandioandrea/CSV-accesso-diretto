@@ -46,6 +46,9 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -180,7 +183,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(636, 89);
+            this.button7.Location = new System.Drawing.Point(901, 89);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(183, 33);
             this.button7.TabIndex = 16;
@@ -190,10 +193,34 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(682, 128);
+            this.textBox11.Location = new System.Drawing.Point(947, 128);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 22);
             this.textBox11.TabIndex = 17;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(636, 89);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(170, 33);
+            this.button8.TabIndex = 18;
+            this.button8.Text = "MODIFICA";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(669, 142);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(100, 22);
+            this.textBox12.TabIndex = 19;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(669, 182);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(100, 22);
+            this.textBox13.TabIndex = 20;
             // 
             // Form1
             // 
@@ -201,6 +228,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(1217, 550);
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox10);
@@ -247,6 +277,9 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox13;
     }
 }
 
