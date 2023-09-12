@@ -53,12 +53,79 @@ namespace CSV_accesso_diretto_Form
         //BOTTONE FUNZIONE 3
         private void button3_Click(object sender, EventArgs e)
         {
-            f.LunghezzaMaxRecord(lunghezza1);
-            MessageBox.Show("La lunghezza massima del record è:" + lunghezza1);
+            using (StreamReader sw = new StreamReader(nomefile))
+            {
+                int dim = 0;
+
+                string a = sw.ReadLine();
+
+                string[] campi = a.Split(';');
+
+                int[] arr = new int[(campi.Length) + 1];
+
+                for (int i = 0; i < campi.Length; i++)
+                {
+                    arr[dim] = campi[i].Length;
+                    dim++;
+                }
+                arr[(arr.Length) - 1] = a.Length;
+
+                while (a != null)
+                {
+                    dim = 0;
+
+                    string[] campi2 = a.Split(';');
+
+                    for (int i = 0; i < campi2.Length; i++)
+                    {
+                        if (arr[dim] < campi2[i].Length)
+                        {
+                            arr[dim] = campi2[i].Length;
+                        }
+
+                        dim++;
+                    }
+
+                    if (arr[(arr.Length) - 1] < a.Length)
+                    {
+                        arr[(arr.Length) - 1] = a.Length;
+                    }
+
+                    a = sw.ReadLine();
+
+                }
+
+                dim = 0;
+             
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (i != arr.Length - 1)
+                    {
+                        MessageBox.Show("Lunghezza campo " + dim.ToString() + ": " + arr[i]);
+                    }
+                    else
+                    {
+                        MessageBox.Show(("Lunghezza record " + dim.ToString() + ": " + (arr[arr.Length - 1] + 1)));
+                    }
+                    dim++;
+                }
+                lunghezza1 = arr[arr.Length - 1];
+            }
+
         }
         //BOTTONE FUNIONE 4
         private void button4_Click(object sender, EventArgs e)
         {
+            if (lunghezza1 == 0)
+            {
+            
+                MessageBox.Show("Calcolare prima lunghezza del record più lungo che compone il file");
+            }
+            else
+            {
+                f.NumeroSpazi(lunghezza1);
+                MessageBox.Show("Tutti i record hanno la stessa lunghezza");
+            }
 
         }
         //BOTTONE FUNIONE 5
