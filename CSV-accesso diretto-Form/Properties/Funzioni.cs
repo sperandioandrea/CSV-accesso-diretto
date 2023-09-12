@@ -234,59 +234,147 @@ namespace CSV_accesso_diretto_Form.Properties
 
             return b;
         }
-        /*/
+
         //FUNZIONE 8
-        public bool Modifica()
+        public void Modifica(string a1, string a2, string a3, string a4, string a5, string a6, string a7, string a8, string a9)
         {
-            bool trova = false;
-            string[] linee = File.ReadAllLines();
-            using (StreamWriter sw = new StreamWriter(nomefile))
+            string a = a1;
+
+            string[] ele = new string[1000];
+
+            int dim = 0;
+
+            int control = 0;
+
+            using (StreamReader sw = new StreamReader(nomefile))
             {
+                string b = sw.ReadLine();
 
-                int i = 1;
-                sw.WriteLine(linee[0]);
-                for (; i < linee.Length; i++)
+                while (b != null)
                 {
-                    string[] campi = linee[i].Split(';');
-                    if (campi[0].ToLower() == textBox13.Text.ToLower())
+                    ele[dim] = b;
+
+                    string[] campi = ele[dim].Split(';');
+
+                    for (int i = 0; i < campi.Length; i++)
                     {
-                        trova = true;
-                        campi[0] = textBox12.Text;
-                        linee[i] = String.Join(";", campi);
-                        sw.WriteLine(linee[i]);
-                        break;
-                    }
-                    else
-                        if (campi[1].ToLower() == textBox12.Text.ToLower())
-                    {
-                        trova = true;
-                        campi[1] = textBox12.Text;
-                        linee[i] = String.Join(";", campi);
-                        sw.WriteLine(linee[i]);
-                        break;
-                    }
-                    else
-                        if (campi[2].ToLower() == textBox13.Text.ToLower())
-                    {
-                        trova = true;
-                        campi[2] = textBox13.Text;
-                        linee[i] = String.Join(";", campi);
-                        sw.WriteLine(linee[i]);
-                        break;
-                    }
-                    i++;
-                    for (; i < linee.Length; i++)
-                    {
-                        sw.WriteLine(linee[i]);
+                        if (campi[i] == a)
+                        {
+                            control = dim;
+                        }
                     }
 
+                    dim++;
+
+                    b = sw.ReadLine();
                 }
-                return trova;
-
             }
 
+            using (StreamWriter sw = new StreamWriter(nomefile))
+            {
+                dim = 0;
+
+                string r = "";
+
+                while (ele[dim] != null)
+                {
+                    if (dim == control)
+                    {
+                        string[] campi2 = ele[dim].Split(';');
+
+                        if (a2 != null)
+                        {
+                            r = r + a2;
+                        }
+                        else
+                        {
+                            string[] campi3 = ele[dim].Split(';');
+                            r = r + campi3[dim];
+                        }
+
+                        if (a3 != null)
+                        {
+                            r = r + ";" + a3;
+                        }
+                        else
+                        {
+                            string[] campi4 = ele[dim].Split(';');
+                            r = r + ";" + campi4[dim];
+                        }
+
+                        if (a4 != null)
+                        {
+                            r = r + ";" + a4;
+                        }
+                        else
+                        {
+                            string[] campi5 = ele[dim].Split(';');
+                            r = r + ";" + campi5[dim];
+                        }
+
+                        if (a5 != null)
+                        {
+                            r = r + ";" + a5;
+                        }
+                        else
+                        {
+                            string[] campi6 = ele[dim].Split(';');
+                            r = r + ";" + campi6[dim];
+                        }
+
+                        if (a6 != null)
+                        {
+                            r = r + ";" + a6;
+                        }
+                        else
+                        {
+                            string[] campi7 = ele[dim].Split(';');
+                            r = r + ";" + campi7[dim];
+                        }
+
+                        if (a7 != null)
+                        {
+                            r = r + ";" + a7;
+                        }
+                        else
+                        {
+                            string[] campi8 = ele[dim].Split(';');
+                            r = r + ";" + campi8[dim];
+                        }
+
+                        if (a8 != null)
+                        {
+                            r = r + ";" + a8;
+                        }
+                        else
+                        {
+                            string[] campi9 = ele[dim].Split(';');
+                            r = r + ";" + campi9[dim];
+                        }
+
+                        if (a9 != null)
+                        {
+                            r = r + ";" + a9;
+                        }
+                        else
+                        {
+                            string[] campi10 = ele[dim].Split(';');
+                            r = r + ";" + campi10[dim];
+                        }
+
+                        sw.WriteLine(r);
+                    }
+                    else
+                    {
+                        sw.WriteLine(ele[dim]);
+                    }
+
+                    dim++;
+                }
+            }
         }
-        /*/
+
+        
 
         //FUNZIONE 9
         public void CancellazioneLogica(string a1)

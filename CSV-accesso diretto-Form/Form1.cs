@@ -86,20 +86,26 @@ namespace CSV_accesso_diretto_Form
 
             textBox10.Text = "";
         }
-        /*/
-        //BOTTONE FUNZIONE 8
-        private void button8_Click(object sender, EventArgs e)
-        {
-            f.Modifica();
-        }
-        /*/
-
         //BOTTONE FUNZIONE 9
         private void button7_Click(object sender, EventArgs e)
         {
             f.CancellazioneLogica(textBox11.Text);
             textBox11.Text = "";
         }
-      
+        //BOTTONE FUNZIONE 8
+        private void button8_Click(object sender, EventArgs e)
+        {
+            f.Modifica(textBox12.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text);
+            textBox6.Text = "";
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            f.CancellazioneLogica(textBox8.Text);
+            textBox8.Text = "";
+        }
     }
+
 }
+        
+ 
